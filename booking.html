@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Service — Arif Repair Rajahmundry</title>
+  <meta name="description" content="Request AC, Refrigerator or Washing Machine repair in Rajahmundry. Send your service details directly to Arif Repair Services on WhatsApp.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-content">
+      <div class="logo">Arif <span>Repair</span></div>
+      <div class="hamburger"><i class="fas fa-bars"></i></div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="services.html">Our Services</a>
+        <a href="booking.html">Book Now</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a href="tel:9848732678" class="btn"><i class="fas fa-phone" style="margin-right:6px"></i>Call Now</a>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="container">
+      <h1>Book a Service</h1>
+      <p>3 easy steps — choose a service, share your details, and send your request</p>
+    </div>
+  </div>
+
+  <!-- Booking Section -->
+  <section class="booking-section">
+    <div class="container">
+      <div class="booking-wrapper">
+
+        <!-- Step Indicator -->
+        <div class="step-indicator">
+          <div class="step-ind active" data-step="1">
+            <div class="step-dot"><span>1</span></div>
+            <span class="step-lbl">Select Service</span>
+          </div>
+          <div class="step-ind" data-step="2">
+            <div class="step-dot"><span>2</span></div>
+            <span class="step-lbl">Your Details</span>
+          </div>
+          <div class="step-ind" data-step="3">
+            <div class="step-dot"><span>3</span></div>
+            <span class="step-lbl">Review &amp; Send</span>
+          </div>
+        </div>
+
+        <!-- FORM -->
+        <form id="bookingForm" novalidate>
+
+          <!-- ── STEP 1: Choose Appliance & Service ── -->
+          <div class="form-step active" data-step="1">
+            <div class="form-card">
+              <h2 class="card-title">Choose Your Appliance</h2>
+              <p class="card-subtitle">Select the appliance you need repaired, then choose the specific service.</p>
+
+              <!-- Appliance Selector -->
+              <div class="appliance-selector">
+                <div class="appliance-pick" data-appliance="ac" id="pick-ac">
+                  <i class="fas fa-snowflake"></i>
+                  <div class="appliance-name">Air Conditioner</div>
+                </div>
+                <div class="appliance-pick" data-appliance="washing" id="pick-washing">
+                  <i class="fas fa-tshirt"></i>
+                  <div class="appliance-name">Washing Machine</div>
+                </div>
+                <div class="appliance-pick" data-appliance="refrigerator" id="pick-refrigerator">
+                  <i class="fas fa-temperature-low"></i>
+                  <div class="appliance-name">Refrigerator</div>
+                </div>
+              </div>
+
+              <!-- Service Dropdown (shown after appliance selection) -->
+              <div class="form-group hidden" id="serviceSelectGroup">
+                <label for="serviceSelect">Select Service <span class="req">*</span></label>
+                <select class="form-control" id="serviceSelect">
+                  <option value="">— Choose a Service —</option>
+                </select>
+              </div>
+
+              <div class="form-nav">
+                <span style="font-size:0.82rem;color:var(--text-light);">
+                  <i class="fas fa-info-circle"></i> Service charges are confirmed with you before work begins
+                </span>
+                <button type="button" class="btn-next-form">
+                  Next: Your Details <i class="fas fa-arrow-right" style="margin-left:6px"></i>
+                </button>
+              </div>
+            </div>
+          </div><!-- /step 1 -->
+
+          <!-- ── STEP 2: Customer Details ── -->
+          <div class="form-step" data-step="2">
+            <div class="form-card">
+              <h2 class="card-title">Your Details</h2>
+              <p class="card-subtitle">Fill in your contact details and preferred appointment slot.</p>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="custName">Full Name <span class="req">*</span></label>
+                  <input type="text" class="form-control" id="custName" placeholder="e.g. Ravi Kumar" autocomplete="name">
+                </div>
+                <div class="form-group">
+                  <label for="custPhone">Mobile Number <span class="req">*</span></label>
+                  <input type="tel" class="form-control" id="custPhone" placeholder="10-digit mobile" maxlength="10" autocomplete="tel">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>WhatsApp Number</label>
+                <div class="form-check">
+                  <input type="checkbox" id="samePhone" checked>
+                  <label for="samePhone">Same as my mobile number</label>
+                </div>
+              </div>
+              <div class="form-group hidden" id="whatsappGroup">
+                <label for="custWhatsapp">WhatsApp Number <span class="req">*</span></label>
+                <input type="tel" class="form-control" id="custWhatsapp" placeholder="WhatsApp number" maxlength="10">
+              </div>
+
+              <div class="form-group">
+                <label for="custAddress">Your Address / Area <span class="req">*</span></label>
+                <input type="text" class="form-control" id="custAddress" placeholder="e.g. Danavaipeta, Rajahmundry" autocomplete="street-address">
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="bookDate">Preferred Date <span class="req">*</span></label>
+                  <input type="date" class="form-control" id="bookDate">
+                </div>
+                <div class="form-group">
+                  <label for="bookTime">Preferred Time Slot <span class="req">*</span></label>
+                  <select class="form-control" id="bookTime">
+                    <option value="">— Select Slot —</option>
+                    <option value="morning">Morning  (8 AM – 12 PM)</option>
+                    <option value="afternoon">Afternoon (12 PM – 4 PM)</option>
+                    <option value="evening">Evening  (4 PM – 7 PM)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="custIssue">Describe the Problem <span style="color:var(--text-light);font-weight:400">(optional)</span></label>
+                <textarea class="form-control" id="custIssue" placeholder="e.g. AC is not cooling properly, makes noise when starting..."></textarea>
+              </div>
+
+              <div class="form-nav">
+                <button type="button" class="btn-back-form">
+                  <i class="fas fa-arrow-left" style="margin-right:6px"></i> Back
+                </button>
+                <button type="button" class="btn-next-form">
+                  Next: Review &amp; Send <i class="fas fa-arrow-right" style="margin-left:6px"></i>
+                </button>
+              </div>
+            </div>
+          </div><!-- /step 2 -->
+
+          <!-- ── STEP 3: Review & Send Request ── -->
+          <div class="form-step" data-step="3">
+            <div class="form-card">
+              <h2 class="card-title">Review Your Request</h2>
+              <p class="card-subtitle">Check your details, then send your request to Arif Repair Services on WhatsApp. The team will confirm availability and charges.</p>
+
+              <!-- Booking Summary -->
+              <div class="summary-card">
+                <h3><i class="fas fa-clipboard-list"></i> Booking Summary</h3>
+                <div class="summary-row"><label>Name</label><span id="sum-name">—</span></div>
+                <div class="summary-row"><label>Phone</label><span id="sum-phone">—</span></div>
+                <div class="summary-row"><label>Appliance</label><span id="sum-appliance">—</span></div>
+                <div class="summary-row"><label>Service</label><span id="sum-service">—</span></div>
+                <div class="summary-row"><label>Date</label><span id="sum-date">—</span></div>
+                <div class="summary-row"><label>Time Slot</label><span id="sum-time">—</span></div>
+                <div class="summary-row"><label>Address</label><span id="sum-address">—</span></div>
+                <div class="summary-row"><label>Issue</label><span id="sum-issue">—</span></div>
+              </div>
+
+              <div class="request-box">
+                <h3>Pay the ₹149 booking advance</h3>
+                <p class="request-note">Scan this QR with any UPI app. It is prefilled with the UPI ID and ₹149 amount.</p>
+                <img id="upiQrCode" class="upi-qr" alt="UPI QR code for ₹149 booking advance">
+                <p class="upi-fallback" id="upiQrFallback">UPI ID: <strong>9666543655@ybl</strong> · Amount: <strong>₹149</strong></p>
+                <p class="qr-status" id="upiQrStatus" aria-live="polite"></p>
+                <label class="payment-check"><input type="checkbox" id="advancePaidCheck"> I have paid ₹149. Arif Repair Services will confirm receipt manually.</label>
+                <button type="button" class="btn-confirm" id="sendBookingBtn">
+                  <i class="fab fa-whatsapp" style="font-size:1.2rem"></i>
+                  I've Paid ₹149 — Send Request on WhatsApp
+                </button>
+                <p class="request-disclaimer">
+                  <i class="fas fa-info-circle"></i> Payment is not verified by this website. WhatsApp opens with your booking details; tap Send to contact us.
+                  <a href="https://wa.me/919848732678" target="_blank" rel="noopener noreferrer" style="color:var(--primary)">Contact us</a> if you need help.
+                </p>
+              </div>
+
+              <div class="form-nav">
+                <button type="button" class="btn-back-form">
+                  <i class="fas fa-arrow-left" style="margin-right:6px"></i> Back
+                </button>
+                <span style="font-size:0.8rem;color:var(--text-light);text-align:right;">
+                  <i class="fas fa-shield-alt" style="color:var(--accent)"></i> Payment receipt is confirmed by our team
+                </span>
+              </div>
+            </div>
+          </div><!-- /step 3 -->
+
+        </form>
+      </div><!-- /booking-wrapper -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <span class="footer-logo">Arif <span>Repair</span></span>
+        <p>Your trusted partner for home appliance repairs in Rajahmundry. Quality service, guaranteed.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><i class="fas fa-chevron-right"></i><a href="index.html">Home</a></li>
+          <li><i class="fas fa-chevron-right"></i><a href="services.html">Our Services</a></li>
+          <li><i class="fas fa-chevron-right"></i><a href="booking.html">Book a Service</a></li>
+          <li><i class="fas fa-chevron-right"></i><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Contact Info</h3>
+        <ul>
+          <li><i class="fas fa-phone"></i><a href="tel:9848732678">98487 32678</a></li>
+          <li><i class="fab fa-whatsapp"></i><a href="https://wa.me/919848732678">WhatsApp Us</a></li>
+          <li><i class="fas fa-map-marker-alt"></i> All Around Rajahmundry</li>
+          <li><i class="fas fa-clock"></i> Available 24/7</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Arif Repair Services. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
